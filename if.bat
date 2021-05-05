@@ -7,5 +7,5 @@ If "%containerId%" == "" (
   docker stop %ContainerId%
   docker rm -f %ContainerId%
 )
-docker build -t myapp https://github.com/ElAmin88/NGINX-DEMO.git
+docker build -t myapp .
 docker run --name myapp -p 3000:80 -d myapp 
