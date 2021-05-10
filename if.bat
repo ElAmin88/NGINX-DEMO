@@ -1,5 +1,5 @@
 echo "Hello"
-for /f %%i in ('docker ps -qf "name=myapp"') do set containerId=%%i
+for /f %%i in ('docker ps -af "name=myapp"') do set containerId=%%i
 echo %containerId%
 If "%containerId%" == "" (
   echo "No Container running"
