@@ -4,6 +4,7 @@ If "%containerId%" == "" (
   echo "No Container running"
 ) ELSE (
   kubectl delete deployments nginx-deployment
+  kubectl delete services nginx-deployment
 )
 
 for /f %%i in ('docker ps -af "name=myapp"') do set containerId=%%i
