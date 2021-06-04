@@ -1,6 +1,6 @@
 for /f %%i in ('kubectl get deployments nginx-deployment') do set containerId=%%i
 echo %containerId%
-If "%containerId%" == "" (
+If "%containerId%" == "CONTAINER" (
   echo "No Container running"
 ) ELSE (
   kubectl delete deployments nginx-deployment

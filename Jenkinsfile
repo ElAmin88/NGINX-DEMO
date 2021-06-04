@@ -4,17 +4,18 @@ pipeline {
     stages {
         stage('clean environment') {
             steps {
-                bat 'powershell.exe -ExecutionPolicy Bypass  "C:\\Users\\AbdelrahmanElaminAde\\Desktop\\DevOps\\NGINX-DEMO\\clean.bat"'
+                sh('ls')
+                sh ('./clean.sh')
             }
         }
         stage('update image') {
             steps {
-                bat 'powershell.exe -ExecutionPolicy Bypass  "C:\\Users\\AbdelrahmanElaminAde\\Desktop\\DevOps\\NGINX-DEMO\\imageUpdate.bat"'
+                sh ('./image_update.sh')
             }
         }
         stage('deployment') {
             steps {
-                bat 'powershell.exe -ExecutionPolicy Bypass  "C:\\Users\\AbdelrahmanElaminAde\\Desktop\\DevOps\\NGINX-DEMO\\deploy.bat"'
+                sh ('./deploy.sh')
             }
             
         }
