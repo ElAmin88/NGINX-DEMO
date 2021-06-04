@@ -2,9 +2,16 @@ pipeline {
     agent any
 
     stages {
+        stage('give permissions') {
+            steps {
+                sh('ll')
+                sh ('chmod 777 clean.sh')
+                sh ('chmod 777 image_update.sh')
+                sh ('chmod 777 deploy.sh')
+            }
+        }
         stage('clean environment') {
             steps {
-                sh('ls')
                 sh ('./clean.sh')
             }
         }
