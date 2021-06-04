@@ -5,7 +5,7 @@ else
         echo 'nginx deployment not found'
 fi
 
-if docker ps -af name=myapp | grep myapp; then
+if docker ps -af name=nginx | grep nginx; then
         docker stop nginx
         docker rm -f nginx
 else
